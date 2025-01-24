@@ -1,0 +1,372 @@
+:root {
+    --primary-graphics-light: #b0bcc9;
+    --primary-graphics-dark: #a6d0e2;
+    --primary-graphics-mid: #b0c2c9;
+    --primary-text: #e6eff7;
+    --secondary-text: #bfd9f2;
+    --focus: #7fb0d5;
+    --dark-focus: #3da6f7;
+    --break: #94d4a7;
+    --dark-break: #6ebd7f;
+}
+
+h1 {
+    font-family: "Lucida Console";
+}
+
+.center {
+    align-items: center;
+}
+
+/* Page Body */
+#body {
+    margin: 100px;
+    margin-bottom: 100px;
+}
+
+/* Header */
+#header {
+    position: sticky;
+    padding-top: 50px;
+    width: 80%;
+}
+
+/* Menu */
+.menu-content {
+    border-radius: 10px;
+    background-color: var(--primary-graphics-mid);
+    color: white;
+    box-shadow: -4px -3px 45px 21px rgba(81, 91, 120, 0.35);
+    height: 70px;
+    justify-content: center;
+}
+
+#elements {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center
+}
+
+
+.menu-content a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 30px;
+    text-align: center;
+}
+
+.menu-content a:hover {
+    scale: 1.1;
+}
+
+
+/* Bubble */
+#welcome-message {
+    font-size: 25px;
+    color: var(--secondary-text);
+    opacity: 1;
+}
+
+#circle {
+    border-radius: 100%;
+    background-color: #98c7f3;
+    opacity: 0.8;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    box-shadow: -4px -3px 45px 21px rgba(11, 57, 197, 0.35);
+}
+
+#circle:hover {
+    animation: to-blue 1s forwards;
+}
+
+
+@keyframes to-blue {
+    0% {
+        background-color: #98c7f3;
+        transform: scale(1, 1);
+    }
+
+    25% {
+        transform: scale(0.95, 1.05);
+    }
+
+    50% {
+        transform: scale(1.05, 0.95);
+    }
+
+    100% {
+        background-color: rgb(0, 42, 255);
+        transform: scale(1, 1);
+    }
+}
+
+/* To-do */
+#to-do {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+#to-do h1 {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+/*Page*/
+.container-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Timer */
+
+#status {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#timer {
+    background-color: var(--primary-graphics-dark);
+    position: relative;
+    width: 60%;
+    height: 500px;
+    left: 5%;
+    margin-right: 10px;
+    position: absolute;
+    opacity: 0.8;
+    border-radius: 5%;
+}
+
+
+#timer h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 60px;
+}
+
+.timer {
+    margin-top: 3lh;
+}
+
+#countdown-bg {
+    width: auto;
+    background-color: var(--primary-text);
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+#countdown-bg h1 {
+    color: var(--primary-graphics-dark);
+    font-size: auto;
+    margin-top: 10px;
+}
+
+button {
+    transition-duration: 0.4s;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 50px;
+
+}
+
+
+.start {
+    text-align: center;
+    margin-top: 30px;
+    scale: 1.5;
+}
+
+.reset {
+    text-align: center;
+    margin-top: 50px;
+}
+
+button:hover {
+    color: #c5e2fd;
+}
+
+#reset {
+    margin-bottom: 10px;
+    width: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+
+/* To-Do List */
+#to-do {
+    background-color: var(--primary-graphics-dark);
+    position: relative;
+    width: 25%;
+    height: auto;
+    right: 5%;
+    margin-left: 10px;
+    position: absolute;
+    min-height: 500px;
+}
+
+#to-do h1 {
+    color: white;
+    font-size: 50px;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.col {
+    text-align: center;
+}
+
+#myInput {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.addBtn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.clearBtn {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f44336;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+li:hover {
+    background-color: #f5f5f5;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: #888;
+}
+
+body.focus {
+    background-color: var(--focus);
+    outline: none;
+}
+
+#to.focus {
+    background-color: var(--dark-focus);
+    outline: none;
+}
+
+.col.started {
+}
+
+
+@keyframes bg-focus {
+    0% {}
+
+    100% {
+        background-color: var(--primary-graphics-dark);
+    }
+}
+
+@keyframes div-focus {
+    0% {}
+
+    100% {
+        background-color: var(--primary-graphics-dark);
+    }
+}
+
+#timer.break {
+    outline: none;
+    background-color: var(--dark-break);
+}
+
+#to-do.break {
+    outline: none;
+    background-color: var(--dark-break);
+}
+
+body.break {
+    animation: start 1s forwards;
+    background-color: var(--break);
+}
+
+
+@keyframes bg-break {
+    0% {}
+
+    100% {
+        background-color: var(--break);
+    }
+}
+
+@keyframes div-break {
+    0% {}
+
+    100% {
+        background-color: var(--dark-break);
+    }
+}
+
+
+
+body {
+    background-color: var(--primary-graphics-light);
+}
+
+/* Points */
+
+#points {
+    position: absolute;
+    top: 50px;
+    right: 3%;
+    background-color: rgb(122, 122, 211);
+    border-radius: 50%;
+    width: 10vh;
+    height: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#points h1 {
+    font-size: 30px;
+    color: white;
+}
