@@ -32,10 +32,17 @@ def home():
 
 @app.route('/<page>')
 def pages(page):
-    if page in ['safety', 'entrepreneurship', 'hardware', 'inclusivity', 'measurement', 'model', 'plant', 'software', 'sustainable']:
+    if page in ['meet_the_team']:
         return flask.redirect("/", code=302)
     return render_template(str(Path('pages')) + '/' + page.lower() + '.html', pagename=page.lower())
 
+@app.route('/meet_the_authors.html')
+def meet_the_authors():
+    students = [
+        {"name": "Student 1", "grade": "Grade 1", "title": "Title 1", "description": "Description 1", "page": "Page 1"},
+        {"name": "Student 2", "grade": "Grade 2", "title": "Title 2", "description": "Description 2", "page": "Page 2"},
+    ]
+    return render_template('meet_the_authors.html', students=students)
 
 # Main Function, Runs at http://0.0.0.0:8080
 if __name__ == "__main__":
