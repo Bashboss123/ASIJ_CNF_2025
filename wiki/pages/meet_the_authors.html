@@ -6,172 +6,96 @@
 
 {% block page_content %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet the Authors</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        h1 {
-            text-align: center;
-            margin: 20px 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            padding: 20px;
-        }
-        .card {
-            position: relative;
-            width: 100%;
-            padding-top: 150%;
-            perspective: 1000px;
-        }
-        .card-inner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-        .card-front {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        .card-back {
-            background-color: var(--secondary-color);
-            color: white;
-            transform: rotateY(180deg);
-        }
-    </style>
-</head>
-<body>
-    <h1>Meet the Authors</h1>
-    <div class="container">
-        <!-- Repeat this block for each author -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div>
-                        <h2>Student Name</h2>
-                        <p>Grade</p>
-                    </div>
+<style>
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        padding: 20px;
+    }
+    .card {
+        position: relative;
+        width: 100%;
+        padding-top: 150%;
+        perspective: 1000px;
+    }
+    .card-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .card-front {
+        background-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+    .card-back {
+        background-color: var(--secondary-color);
+        color: var(--background-color);
+        transform: rotateY(180deg);
+    }
+
+    h2, p {
+        bottom: 0;
+    } 
+</style>
+
+
+<h1>Meet the Authors</h1>
+<div class="container">
+    
+    {% for student in students %}
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div>
+                    <h2>{{ student.name }}</h2>
+                    <p>{{ student.grade }}</p>
                 </div>
-                <div class="card-back">
-                    <div>
-                        <h3>Title</h3>
-                        <p>Short description</p>
-                        <p>Page</p>
-                    </div>
+            </div>
+            <div class="card-back">
+                <div>
+                    <h2>{{ student.title }}</h2>
+                    <p>{{ student.description }}</p>
+                    <p>{{ student.page }}</p>
                 </div>
             </div>
         </div>
-        <!-- Repeat end -->
-         <!-- Repeat this block for each author -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div>
-                        <h2>Student Name</h2>
-                        <p>Grade</p>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div>
-                        <h3>Title</h3>
-                        <p>Short description</p>
-                        <p>Page</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Repeat end -->
-         <!-- Repeat this block for each author -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div>
-                        <h2>Student Name</h2>
-                        <p>Grade</p>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div>
-                        <h3>Title</h3>
-                        <p>Short description</p>
-                        <p>Page</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Repeat end -->
-         <!-- Repeat this block for each author -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div>
-                        <h2>Student Name</h2>
-                        <p>Grade</p>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div>
-                        <h3>Title</h3>
-                        <p>Short description</p>
-                        <p>Page</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Repeat end -->
-         <!-- Repeat this block for each author -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div>
-                        <h2>Student Name</h2>
-                        <p>Grade</p>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div>
-                        <h3>Title</h3>
-                        <p>Short description</p>
-                        <p>Page</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Repeat end -->
     </div>
-</body>
-</html>
+    {% endfor %}
+
+
+
+    
+</div>
+
+
 
 {% endblock %}
