@@ -1,0 +1,82 @@
+<style>
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+}
+
+.navbar {
+    background: linear-gradient(to right, rgba(34, 193, 195, 0.8), rgba(253, 187, 45, 0.8));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    color: #ffeb3b;
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        margin: 10px 0;
+    }
+}
+</style>
+
+<nav id="nav">
+    <div class="navbar-container">
+        <a href="#" class="navbar-logo">Komorebi</a>
+        <ul class="navbar-menu">
+            <li class="navbar-item"><a href="#home" class="navbar-link">Home</a></li>
+            <li class="navbar-item"><a href="#about" class="navbar-link">About</a></li>
+            <li class="navbar-item"><a href="#services" class="navbar-link">Services</a></li>
+            <li class="navbar-item"><a href="#contact" class="navbar-link">Contact</a></li>
+        </ul>   
+    </div>
+</nav>
+
+
+

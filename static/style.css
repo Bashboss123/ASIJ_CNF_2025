@@ -1,8 +1,8 @@
-:root {
-    --brown-dark: #8C7561;
-    --brown-light: #D9AF8B;
-    --blue: #B8C6D9;
-    --orange-dark: #F2CD8B;
-    --orange-light: #FDECC9;
-    --text-color: #000000;
+root {
+    --brown-dark: #73626E;   /* Muted brown with a purple tint */
+    --brown-light: #A69485;  /* Soft, earthy brown */
+    --blue: #A8A9BF;         /* Subdued lavender-blue */
+    --orange-dark: #F2E7C4;  /* Warm beige tone */
+    --orange-light: #F2F2F2; /* Light neutral off-white */
+    --text-color: #797D70;   /* Muted greenish-gray */
 }

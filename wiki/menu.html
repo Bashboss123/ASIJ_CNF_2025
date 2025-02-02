@@ -1,9 +1,117 @@
-<nav id="nav">
-    <div class="container" id="header">
-    
-    <a href="/buy">Buy</a>
-    <a href="/meet_the_authors">Meet the Authors</a>
+<style>
+ body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--brown-dark);
+}
 
+.navbar {
+    background: linear-gradient(to right, rgba(255, 198, 13, 0.8), rgba(253, 187, 45, 0.8));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    background-size: 200% 200%;
+    width: 100%;
+    z-index: 1000;
+    animation: sunlight 10s infinite alternate;
+}
+
+@keyframes sunlight {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--brown-dark);
+    text-decoration: none;
+    animation: glow 2s infinite alternate;
+}
+
+.navbar-logo:hover {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #f1c70b; }
+    100% { text-shadow: 0 0 50px #d10000; }
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    margin-left: 20px;
+}
+
+.navbar-link {
+    color: var(--brown-dark);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--orange-light);
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+.navbar-link:hover {
+    color: orange;
+    transform: translateY(-5px);
+}
+
+.navbar-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-item {
+        margin: 10px 0;
+    }
+}
+</style>
+
+<nav id="nav">
+    <div class="navbar-container">
+        <a href="#" class="navbar-logo">ASIJ CNF 2025</a>
+        <ul class="navbar-menu">
+            <li class="navbar-item"><a href="{{ url_for('pages', page='home') }}" class="navbar-link">Home</a></li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='meet_the_authors') }}" class="navbar-link">Authors</a></li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='purchase') }}" class="navbar-link">Purchase</a></li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='about') }}" class="navbar-link">About</a></li>
+        </ul>   
     </div>
 </nav>
 
