@@ -11,7 +11,7 @@
     <div id="initial-screen-container">
         <div id="initial-text">
             <h1 class="krb japanese"><span class="ki">木</span><span class="more">漏れ</span><span class="bi">日</span></h1>
-            <h1 class="krb english">Komorebi</h1>
+            <h1 class="krb english"><i>Komorebi</i></h1>
         </div>
     </div>
 
@@ -22,13 +22,13 @@
                 <div class="dropdown-item">
                     <h1 class="dropdown-header">木</h1>
 
-                    <h2 class="dropdown-english">ko</h2>
+                    <h2 class="dropdown-english"><i>ko</i></h2>
                     <p class="dropdown-content">Tree. Possible topics include roots of identity, structural
                         support, stability, and continuity.</p>
                 </div>
                 <div class="dropdown-item">
                     <h1 class="dropdown-header">漏れ</h1>
-                    <h2 class="dropdown-english">more</h2>
+                    <h2 class="dropdown-english"><i>more</i></h2>
                     <p class="dropdown-content">
                         To leak, filtering through. A small amount trickling through. Possible topics include light and
                         dark
@@ -37,7 +37,7 @@
                 </div>
                 <div class="dropdown-item">
                     <h1 class="dropdown-header">日</h1>
-                    <h2 class="dropdown-english">bi</h2>
+                    <h2 class="dropdown-english"><i>bi</i></h2>
                     <p class="dropdown-content"> Sun. Possible topics include warmth, enlightenment, growth,
                         and
                         value.</p>
@@ -78,11 +78,11 @@
         }
 
         .krb {
-            font-size: 60px;
+            font-size: 80px;
             font-family: myFirstFont;
             src: url(OPTICaslonFive-Swash.otf);
             transition: all 0.5s ease;
-            background-image: url("https://happiful.com/_next/image?url=https%3A%2F%2Fhappiful-magazine.ghost.io%2Fcontent%2Fimages%2F2020%2F11%2Fpixpoetry-9JxubXPaidg-unsplash--1-.jpg&w=1920&q=75");
+            background-color: black;
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -94,11 +94,15 @@
         .japanese {
             opacity: 1;
             z-index: 2;
+            position: absolute;
+            top: 0;
         }
 
         .english {
             opacity: 0;
             z-index: 1;
+            top: 0;
+            position: absolute;
         }
 
         #initial-text:hover .japanese {
@@ -108,7 +112,7 @@
 
         #initial-text:hover .english {
             opacity: 1;
-            transform: translateY(-60px);
+            transform: translateY(-10px);
         }
 
         .wrapper {
@@ -138,7 +142,7 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(150, 165, 105) 91%);
+            background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(207, 220, 168) 91%);
             background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(132, 145, 94) 91%);
             background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(125, 133, 101) 91%);
             filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2E7C4", endColorstr="#A69485", GradientType=1);
@@ -220,7 +224,7 @@
         }
 
         .dropdown-item:hover .dropdown-header {
-            color: red;
+            color: rgba(255, 0, 0, 0.289);
             transform: translateX(-10vw);
         }
 
