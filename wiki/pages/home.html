@@ -16,7 +16,8 @@
     </div>
 
     <div class="content-container">
-        <h1 class="row what_is">What is 木漏れ日 (komorebi)?</h1>
+        <h1 class="row what_is">What is</h1>
+        <h1 class="row what_1">?</h1>
         <div class="content row">
             <div class="dropdown">
                 <div class="dropdown-item">
@@ -73,8 +74,8 @@
             position: relative;
             cursor: default;
             color: var(--light-gray);
-            position: sticky;
-            transform: translateY(-100px);
+            position: fixed;
+            top: 34%;
         }
 
         .krb {
@@ -103,6 +104,7 @@
             z-index: 1;
             top: 0;
             position: absolute;
+            transform: translateX(+10px)
         }
 
         #initial-text:hover .japanese {
@@ -112,7 +114,7 @@
 
         #initial-text:hover .english {
             opacity: 1;
-            transform: translateY(-10px);
+            transform: translateY(+10px);
         }
 
         .wrapper {
@@ -142,9 +144,9 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, rgb(207, 220, 168) 91%);
-            background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, rgb(132, 145, 94) 91%);
-            background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, rgb(125, 133, 101) 91%);
+            background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(207, 220, 168) 91%);
+            background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(132, 145, 94) 91%);
+            background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, hsla(27, 16%, 59%, 1) 51%, rgb(125, 133, 101) 91%);
             filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2E7C4", endColorstr="#A69485", GradientType=1);
             opacity: 0.7;
         }
@@ -156,6 +158,7 @@
             align-items: center;
             background: var(--cream);
             opacity: 0.7;
+            padding-bottom: 150px; 
         }
 
         .content h1 {
@@ -191,16 +194,28 @@
 
         .what_is {
             position: sticky;
-            top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; 
+            transform: translate(-13%, 170%);
         }
+
+        .what_1{
+            position: sticky;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; 
+            transform: translate(22%, -100%);
+        }
+
 
         .dropdown {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            width: 100%;
+            width: 200%;
             cursor: default;
             align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; 
         }
 
         .dropdown-item {
@@ -208,8 +223,9 @@
             align-items: center;
             position: relative;
             align-items: center;
-            width: 100%;
+            width: 200%;
             background-color: var(--cream);
+            opacity: 1;
         }
 
         .dropdown-header {
@@ -275,21 +291,35 @@
             text-align: center;
         }
     </style>
-
+    
     <script>
         window.addEventListener('scroll', function () {
             const initialText = document.getElementById('initial-text');
+            const questionText = document.querySelector('.what_is');
+            const questionText1 = document.querySelector('.what_1');
+            const dropdown1 = document.querySelector('.dropdown');
+            const dropdown2 = document.querySelector('.dropdown-item');
             const scrollPosition = window.scrollY;
             const windowHeight = window.innerHeight;
-            const fadeStart = 0;
-            const fadeEnd = windowHeight / 2;
+        
+            const moveStart = 0;  
+            const moveEnd = windowHeight * 0.5;  
 
-            if (scrollPosition <= fadeStart) {
-                initialText.style.opacity = 1;
-            } else if (scrollPosition >= fadeEnd) {
-                initialText.style.opacity = 0;
+            let moveAmount = Math.min(scrollPosition / 5, 300);
+
+            initialText.style.transform = `translateX(${moveAmount}px)`;
+
+            if (scrollPosition > moveEnd) {
+                initialText.style.transform = `translateX(80px)`;
+                initialText.style.position = 'sticky';
+                questionText.style.opacity = 1;
+                questionText1.style.opacity = 1;
+                dropdown1.style.opacity = 1;
             } else {
-                initialText.style.opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                initialText.style.position = 'fixed';
+                questionText.style.opacity = 0;
+                questionText1.style.opacity = 0;
+                dropdown1.style.opacity = 0;
             }
         });
     </script>
