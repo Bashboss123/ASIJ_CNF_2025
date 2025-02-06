@@ -6,63 +6,292 @@
 
 {% block page_content %}
 
-//
+<div class="wrapper">
 
-<div class="content-container">
-    <div class="content">
-        <h1>About SUPA Creative Non-Fiction</h1>
-        <p>This is a brief description about SUPA Creative Non-Fiction.</p>
-
-        <h1>What is CNF</h1>
-        <p>Creative Non-Fiction (CNF) is a genre of writing that uses literary styles and techniques to create factually accurate narratives.</p>
-
-        <h1>Komorebi</h1>
-        <p>Komorebi is a Japanese word that refers to the sunlight filtering through the leaves of trees.</p>
-
-        <a href="https://example.com" class="external-link">Check out Ms.Anjali's Website Here</a>
+    <div id="initial-screen-container">
+        <div id="initial-text">
+            <h1 class="krb japanese"><span class="ki">木</span><span class="more">漏れ</span><span class="bi">日</span></h1>
+            <h1 class="krb english"><i>Komorebi</i></h1>
+        </div>
     </div>
-</div>
-{% endblock %}
 
-<style>
-    .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
-    padding: 20px;
-    margin-top: 80px; /* Match navbar height */
-}
+    <div class="content-container">
+        <h1 class="row what_is">What is 木漏れ日 (komorebi)?</h1>
+        <div class="content row">
+            <div class="dropdown">
+                <div class="dropdown-item">
+                    <h1 class="dropdown-header">木</h1>
 
-.content {
-    max-width: 800px;
-    text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+                    <h2 class="dropdown-english"><i>ko</i></h2>
+                    <p class="dropdown-content">Tree. Possible topics include roots of identity, structural
+                        support, stability, and continuity.</p>
+                </div>
+                <div class="dropdown-item">
+                    <h1 class="dropdown-header">漏れ</h1>
+                    <h2 class="dropdown-english"><i>more</i></h2>
+                    <p class="dropdown-content">
+                        To leak, filtering through. A small amount trickling through. Possible topics include light and
+                        dark
+                        (contrast), exploring loss, momentous nature, delicacy, and unpredictability.</p>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <h1 class="dropdown-header">日</h1>
+                    <h2 class="dropdown-english"><i>bi</i></h2>
+                    <p class="dropdown-content"> Sun. Possible topics include warmth, enlightenment, growth,
+                        and
+                        value.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.content h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
 
-.content p {
-    color: #34495e;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
 
-.external-link {
-    display: inline-block;
-    color: #2980b9;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: color 0.3s;
-}
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            --bs-gutter-x: 0rem;
+        }
 
-.external-link:hover {
-    color: #ffeb3b;
-}
-</style>
+        #initial-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30vw;
+            position: relative;
+            cursor: default;
+            color: var(--light-gray);
+            position: sticky;
+            transform: translateY(-100px);
+        }
+
+        .krb {
+            font-size: 80px;
+            font-family: myFirstFont;
+            src: url(OPTICaslonFive-Swash.otf);
+            transition: all 0.5s ease;
+            background-color: black;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+
+        .japanese {
+            opacity: 1;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+        }
+
+        .english {
+            opacity: 0;
+            z-index: 1;
+            top: 0;
+            position: absolute;
+        }
+
+        #initial-text:hover .japanese {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        #initial-text:hover .english {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+
+        .wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            padding: 20px;
+            margin-top: 80px;
+        }
+
+        #initial-screen-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background: linear-gradient(135deg, rgba(34, 193, 195, 0.1), rgba(253, 187, 45, 0.1));
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, rgb(207, 220, 168) 91%);
+            background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, rgb(132, 145, 94) 91%);
+            background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, rgb(125, 133, 101) 91%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2E7C4", endColorstr="#A69485", GradientType=1);
+            opacity: 0.7;
+        }
+
+        .content-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--cream);
+            opacity: 0.7;
+        }
+
+        .content h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            color: #34495e;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+
+        .content-container .row {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            --bs-gutter-x: 0rem;
+        }
+
+        .what_is {
+            position: sticky;
+            top: 20px;
+        }
+
+        .dropdown {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            cursor: default;
+            align-items: center;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+            align-items: center;
+            width: 100%;
+            background-color: var(--cream);
+        }
+
+        .dropdown-header {
+            font-size: 100px;
+            margin-right: 1rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin: 0 auto;
+            color: hsla(46, 64%, 86%, 1);
+            width: 10vw;
+        }
+
+        .dropdown-item:hover .dropdown-header {
+            color: rgba(255, 0, 0, 0.289);
+            transform: translateX(-10vw);
+        }
+
+
+        .dropdown-content {
+            max-width: 20vw;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dropdown-item:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(50%);
+            background-color: transparent;
+        }
+
+        .dropdown-english {
+            opacity: 0;
+            max-width: 20vw;
+            text-align: center;
+            position: absolute;
+            transition: all 0.3s ease;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+
+        }
+
+        .dropdown-item:hover .dropdown-english {
+            opacity: 1;
+        }
+
+        .content-container .row {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const initialText = document.getElementById('initial-text');
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const fadeStart = 0;
+            const fadeEnd = windowHeight / 2;
+
+            if (scrollPosition <= fadeStart) {
+                initialText.style.opacity = 1;
+            } else if (scrollPosition >= fadeEnd) {
+                initialText.style.opacity = 0;
+            } else {
+                initialText.style.opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+            }
+        });
+    </script>
+
+    {% endblock %}
