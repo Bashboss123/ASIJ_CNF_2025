@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}ASIJ CNF 2025{% endblock %}
+{% block background %}{% endblock %}
+{% block lead %}{% endblock %}
+
+{% block page_content %}
+
+<div class="wrapper">
+
+    <section class="book-section row">
+        <div class="book-image col">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIRR0GvR5k0UVe958PGyMIhaxwuuiH03GVw&s" class="CENy8b">
+        </div>
+        <div class="book-description col">
+            <p>Purchase our CNF Anthology: Komorebi</p>
+            <p>Buy</p>
+            <p style="font-size: 20px; color: #A8A9BF; font-weight: bold;">￥2,500</p>
+        </div>
+    </section>
+</div>
+<style>
+    h3,
+    p {
+        text-align: center;
+    }
+
+    .book-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+    }
+    .wrapper {
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--cream);
+        opacity: 0.7;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .book-image, .book-description {
+        flex: 1;
+    }
+    .book-image img {
+        height: 40vh;
+        margin-left: 30vw;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        opacity: 1;
+    }
+    .book-image img:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+{% endblock %}
