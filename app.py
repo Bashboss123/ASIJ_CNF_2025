@@ -32,7 +32,7 @@ def home():
 
 @app.route('/<page>')
 def pages(page):
-    if page in ['meet_the_authors']:
+    if page in ['authors']:
         students = [
             {"name": "John Doe", "grade": "Grade 10", "title": "My Journey", "description": "A short description of my journey.", "page": "Page 1"}
         ]

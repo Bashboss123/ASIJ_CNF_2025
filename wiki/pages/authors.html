@@ -6,14 +6,55 @@
 
 {% block page_content %}
 
+
+<div class="full-container">
+
+    <h1>Meet the Authors</h1>
+    <div class="container">
+
+        {% for student in students %}
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div>
+                        <h2>{{ student.name }}</h2>
+                        <p>{{ student.grade }}</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h2>{{ student.title }}</h2>
+                        <p>{{ student.description }}</p>
+                        <p>{{ student.page }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+<div class="deeper-intro">
+</div>
+
+
 <style>
     .full-container {
+        background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2E7C4", endColorstr="#A69485", GradientType=1);
+        opacity: 0.7;
         
-        opacity: 1;
     }
+
     h1 {
         text-align: center;
-        margin: 20px 0;
+        margin-block-start: 0;
+        transform: translateY(10vh);
+        font-size: 50px;
     }
 
     body {
@@ -75,43 +116,10 @@
         transform: rotateY(180deg);
     }
 
-    h2, p {
+    h2,
+    p {
         bottom: 0;
     }
 </style>
-
-<div class="full-container">
-
-    <h1>Meet the Authors</h1>
-    <div class="container">
-
-        {% for student in students %}
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div>
-                        <h2>{{ student.name }}</h2>
-                        <p>{{ student.grade }}</p>
-                    </div>
-                </div>
-                <div class="card-back">
-                    <div>
-                        <h2>{{ student.title }}</h2>
-                        <p>{{ student.description }}</p>
-                        <p>{{ student.page }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-
-
-    </div>
-</div>
-
-<div class="deeper-intro">
-</div>
-
-
 
 {% endblock %}
