@@ -294,15 +294,22 @@
         align-items: center;
         text-align: center;
     }
+
+    .down-icon {
+        text-align: center;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        max-height: 5vh;
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
 </style>
 
 <script>
-    document.addEventListener("wheel", function (event) {
-        event.preventDefault();
-        window.scrollBy({
-            top: event.deltaY * 0.1, // Adjust multiplier to control speed (0.3 = 30% of default speed)
-        });
-    }, { passive: false });
+
     window.addEventListener('scroll', function () {
         const initialText = document.getElementById('initial-text');
         const questionText = document.querySelector('.what_is');
