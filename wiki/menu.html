@@ -33,20 +33,6 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    .krb {
-            font-size: 20px;
-            font-family: myFirstFont;
-            src: url(OPTICaslonFive-Swash.otf);
-            transition: all 0.5s ease;
-            background-color: black;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            color: transparent;
-            background-clip: text;
-            -webkit-background-clip: text;
-        }
-
     .navbar-menu {
         display: flex;
         gap: 2rem;
@@ -59,7 +45,8 @@
     .navbar-item {
         padding: 10px;
         font-size: 20px;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: myFirstFont;
+        src: url(OPTICaslonFive-Swash.otf);
     }
 
     .navbar-link {
@@ -79,4 +66,10 @@
         background: #d2f896;
         opacity: 0.7;
     }
+
+    .navbar-item.current .navbar-link {
+        color: var(--lavendar); /* Change color for current page */
+        font-size: 22px; /* Increase font size for current page */
+    }
+
 </style>
