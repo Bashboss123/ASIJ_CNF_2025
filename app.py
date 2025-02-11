@@ -1,5 +1,6 @@
 from os import path
 from pathlib import Path
+import sys
 
 import flask
 from flask import Flask, render_template
@@ -29,6 +30,9 @@ def serve():
 def home():
     return render_template('pages/home.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return render_template(path.join(app.root_path, 'static'), 'favicon.ico')
 
 @app.route('/<page>')
 def pages(page):
@@ -126,4 +130,7 @@ def pages(page):
 
 # Main Function, Runs at http://0.0.0.0:8080
 if __name__ == "__main__":
-    app.run(port=8080, debug=True)
+    if len(sys.argv) > 1 and sys.argv[1] == "build":
+        freeze()
+    else:
+        app.run(port=8000)

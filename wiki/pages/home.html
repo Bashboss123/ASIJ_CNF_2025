@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block title %}ASIJ CNF 2025{% endblock %}
+{% block title %}Home{% endblock %}
 {% block background %}{% endblock %}
 {% block lead %}{% endblock %}
 
@@ -85,7 +85,7 @@
     .krb {
         font-size: 80px;
         font-family: myFirstFont;
-        src: url(OPTICaslonFive-Swash.otf);
+        src: url(OPTICaslonFive.otf);
         transition: all 0.5s ease;
         background-color: black;
         background-repeat: no-repeat;
@@ -166,7 +166,7 @@
     }
 
     .content h1 {
-        color: #2c3e50;
+        color: #08080828;
         margin-bottom: 20px;
     }
 
@@ -244,7 +244,7 @@
     }
 
     .dropdown-item:hover .dropdown-header {
-        color: black;
+        color: rgb(72, 121, 100);
         transform: translateX(-10vw);
     }
 
@@ -324,9 +324,7 @@
 
         let moveAmount = Math.min(scrollPosition / 5, 300);
 
-        if (moveAmount <= 80) {
-            initialText.style.transform = `translateX(${moveAmount}px)`;
-        }
+        initialText.style.transform = `translateX(${moveAmount}px)`;
 
         if (scrollPosition > moveEnd) {
             initialText.style.transform = `translateX(80px)`;
