@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block title %}Authors{% endblock %}
+{% block background %}{% endblock %}
+{% block lead %}{% endblock %}
+
+{% block page_content %}
+
+
+<div class="full-container">
+
+    <h1>Meet the Authors</h1>
+    <div class="container">
+
+        {% for student in students %}
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div>
+                        <h2>{{ student.name }}</h2>
+                        <p>{{ student.grade }}</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div>
+                        <h2>{{ student.title }}</h2>
+                        <p>{{ student.description }}</p>
+                        <p>{{ student.page }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
+
+<div class="deeper-intro">
+</div>
+
+
+<style>
+    .full-container {
+        background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2E7C4", endColorstr="#A69485", GradientType=1);
+        opacity: 0.7;
+        
+    }
+
+    h1 {
+        text-align: center;
+        margin-block-start: 0;
+        transform: translateY(10vh);
+        font-size: 50px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        padding: 20px;
+
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+        perspective: 1000px;
+    }
+
+    .card-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .card-front {
+        background-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .card-back {
+        background-color: var(--secondary-color);
+        color: var(--background-color);
+        transform: rotateY(180deg);
+    }
+
+    h2,
+    p {
+        bottom: 0;
+    }
+</style>
+
+{% endblock %}
