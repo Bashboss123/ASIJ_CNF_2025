@@ -7,55 +7,114 @@
 {% block page_content %}
 
 <div class="wrapper">
-
-    <section class="book-section row">
-        <div class="book-image col">
+    <section class="book-section">
+        <div class="book-image">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbIRR0GvR5k0UVe958PGyMIhaxwuuiH03GVw&s" class="CENy8b">
         </div>
-        <div class="book-description col">
-            <p>Purchase our CNF Anthology: Komorebi</p>
-            <p>Buy</p>
-            <p style="font-size: 20px; color: #A8A9BF; font-weight: bold;">￥2,500</p>
+        <div class="book-description">
+            <h2>Purchase our CNF Anthology: <span style="color: #555;">Komorebi</span></h2>
+            <p class="price">￥2,500</p>
+            <button class="buy-btn">Buy Now</button>
         </div>
     </section>
 </div>
+
 <style>
-    h3,
-    p {
-        text-align: center;
+    /* General Styles */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        color: #333;
+        background-color: var(--cream);
     }
 
+    /* Wrapper */
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 0;
+    }
+
+    /* Book Section */
     .book-section {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80vw;
-    }
-    .wrapper {
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--cream);
-        opacity: 0.7;
+        width: 80%;
+        max-width: 900px;
+        background: rgba(101, 223, 133, 0.8);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    .book-image, .book-description {
+    /* Book Image */
+    .book-image {
         flex: 1;
+        display: flex;
+        justify-content: center;
     }
+
     .book-image img {
-        height: 40vh;
-        margin-left: 30vw;
-        transition: transform 0.5s ease, opacity 0.5s ease;
-        margin-top: 50px;
-        margin-bottom: 50px;
-        opacity: 1;
+        height: 250px;
+        max-width: 100%;
+        border-radius: 10px;
+        transition: transform 0.4s ease-in-out;
     }
+
     .book-image img:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
+    }
+
+    /* Book Description */
+    .book-description {
+        flex: 1;
+        text-align: center;
+    }
+
+    .book-description h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #A8A9BF;
+    }
+
+    .buy-btn {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .buy-btn:hover {
+        background-color: #555;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .book-section {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book-image {
+            margin-bottom: 20px;
+        }
+
+        .book-image img {
+            height: 200px;
+        }
     }
 </style>
 

@@ -2,29 +2,41 @@
 <html lang="en">
 
 <head>
-    <!-- AOS, Jquery, AnimateCSS -->
-    <link rel="stylesheet" href="static/aos.css" />
-    <script src="static/aos.js"></script>
-    <script src="static/jquery-3.7.0.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'animate.css') }}" />
-
-    <!-- Bootstrap CSS -->
+    <!--favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     
-
-
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
 
+    <title>{% block title %}{% endblock %} | ASIJ CNF Frazier 2025</title>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-    <title>{% block title %}{% endblock %} | Sasha's Site</title>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
+        #body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-flex {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -38,16 +50,8 @@
                 {% block page_content %}{% endblock %}
             </div>
         </div>
-        {% include 'footer.html' %}
     </div>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="{{ url_for('static', filename = 'bootstrap.bundle.min.js') }}"></script>
+    {% include 'footer.html' %}
 </body>
 </html>
-
-<style>
-    body {
-        width: 100%;
-    }
-</style>
