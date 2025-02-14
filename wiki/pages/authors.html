@@ -31,7 +31,7 @@
 </div>
 
 <style>
-    /* General Styles */
+
     body, html {
         margin: 0;
         padding: 0;
@@ -39,11 +39,12 @@
         color: #333;
     }
 
-    /* Background Styling */
+
     .full-container {
-        background: linear-gradient(90deg, #fdf6e3 20%, #d2f896 91%);
+        background: linear-gradient(0deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
         padding: 50px 20px;
         text-align: center;
+        opacity: 0.7;
     }
 
     .page-title {
@@ -52,7 +53,7 @@
         margin-bottom: 30px;
     }
 
-    /* Card Grid */
+
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -62,7 +63,7 @@
         margin: auto;
     }
 
-    /* Card Styles */
+
     .card {
         position: relative;
         width: 100%;
@@ -100,15 +101,15 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /* Front of Card */
+
     .card-front {
         background-color: #FFFAF0;
         color: #333;
         border: 2px solid #FFD700;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end; /* Push text towards bottom */
-        padding-bottom: 20px; /* Add some padding at bottom */
+        justify-content: flex-end; 
+        padding-bottom: 20px; 
     }
 
     .card-content {
@@ -116,7 +117,7 @@
         text-align: center;
     }
 
-    /* Back of Card */
+
     .card-back {
         background-color: #FFD700;
         color: #333;
@@ -126,7 +127,7 @@
         align-items: center;
     }
 
-    /* Responsive Design */
+    
     @media (max-width: 768px) {
         .page-title {
             font-size: 32px;
