@@ -323,9 +323,9 @@
         const moveEnd = windowHeight * 0.5;
 
         let moveAmount = Math.min(scrollPosition / 5, 300);
-
-        initialText.style.transform = `translateX(${moveAmount}px)`;
-
+        if (moveAmount <= 80) {
+            initialText.style.transform = `translateX(${moveAmount}px)`;
+        }
         if (scrollPosition > moveEnd) {
             initialText.style.transform = `translateX(80px)`;
             initialText.style.position = 'sticky';
