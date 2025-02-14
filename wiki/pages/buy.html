@@ -20,16 +20,16 @@
 </div>
 
 <style>
-
+    /* General Styles */
     body, html {
         margin: 0;
         padding: 0;
         font-family: 'Arial', sans-serif;
         color: #333;
-        background: linear-gradient(0deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background-color: var(--cream);
     }
 
-
+    /* Wrapper */
     .wrapper {
         display: flex;
         justify-content: center;
@@ -37,21 +37,20 @@
         padding: 50px 0;
     }
 
-
+    /* Book Section */
     .book-section {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 80%;
         max-width: 900px;
-        background: var(--cream);
-        opacity: 1.2;
+        background: rgba(101, 223, 133, 0.8);
         padding: 30px;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-  
+    /* Book Image */
     .book-image {
         flex: 1;
         display: flex;
@@ -69,7 +68,7 @@
         transform: scale(1.05);
     }
 
-
+    /* Book Description */
     .book-description {
         flex: 1;
         text-align: center;
@@ -101,7 +100,7 @@
         background-color: #555;
     }
 
-
+    /* Responsive Design */
     @media (max-width: 768px) {
         .book-section {
             flex-direction: column;

@@ -6,68 +6,75 @@
 
 {% block page_content %}
 
-<div class="full-container">
-    <h1 class="page-title">Meet the Authors</h1>
 
+<div class="full-container">
+
+    <h1>Meet the Authors</h1>
     <div class="container">
+
         {% for student in students %}
         <div class="card">
             <div class="card-inner">
                 <div class="card-front">
-                    <div class="card-content">
+                    <div>
                         <h2>{{ student.name }}</h2>
                         <p>{{ student.grade }}</p>
                     </div>
                 </div>
                 <div class="card-back">
-                    <h2>{{ student.title }}</h2>
-                    <p>{{ student.description }}</p>
-                    <p>Page: {{ student.page }}</p>
+                    <div>
+                        <h2>{{ student.title }}</h2>
+                        <p>{{ student.description }}</p>
+                        <p>{{ student.page }}</p>
+                    </div>
                 </div>
             </div>
         </div>
         {% endfor %}
+
+
     </div>
 </div>
 
-<style>
+<div class="deeper-intro">
+</div>
 
-    body, html {
+
+<style>
+    .full-container {
+        background: linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background: -moz-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        background: -webkit-linear-gradient(90deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#F2E7C4", endColorstr="#A69485", GradientType=1);
+        opacity: 0.7;
+        
+    }
+
+    h1 {
+        text-align: center;
+        margin-block-start: 0;
+        transform: translateY(10vh);
+        font-size: 50px;
+    }
+
+    body {
         margin: 0;
         padding: 0;
-        font-family: 'Arial', sans-serif;
-        color: #333;
+        background-color: var(--background-color);
     }
-
-
-    .full-container {
-        background: linear-gradient(0deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
-        padding: 50px 20px;
-        text-align: center;
-        opacity: 0.7;
-    }
-
-    .page-title {
-        font-size: 42px;
-        font-weight: bold;
-        margin-bottom: 30px;
-    }
-
 
     .container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
         padding: 20px;
-        max-width: 1000px;
-        margin: auto;
-    }
 
+    }
 
     .card {
         position: relative;
         width: 100%;
-        padding-top: 150%;
+        padding-top: 100%;
         perspective: 1000px;
     }
 
@@ -77,7 +84,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        transition: transform 0.6s ease-in-out;
+        transition: transform 0.6s;
         transform-style: preserve-3d;
     }
 
@@ -92,49 +99,26 @@
         height: 100%;
         backface-visibility: hidden;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-
-    .card-front {
-        background-color: #FFFAF0;
-        color: #333;
-        border: 2px solid #FFD700;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end; 
-        padding-bottom: 20px; 
-    }
-
-    .card-content {
-        width: 100%;
-        text-align: center;
-    }
-
-
-    .card-back {
-        background-color: #FFD700;
-        color: #333;
-        transform: rotateY(180deg);
-        display: flex;
         justify-content: center;
         align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
-    
-    @media (max-width: 768px) {
-        .page-title {
-            font-size: 32px;
-        }
-        .container {
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
+    .card-front {
+        background-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .card-back {
+        background-color: var(--secondary-color);
+        color: var(--background-color);
+        transform: rotateY(180deg);
+    }
+
+    h2,
+    p {
+        bottom: 0;
     }
 </style>
 

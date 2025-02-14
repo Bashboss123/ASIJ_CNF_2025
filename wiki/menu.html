@@ -2,18 +2,10 @@
     <div class="navbar-container">
         <a href="{{ url_for('pages', page='home') }}" class="navbar-logo">ASIJ CNF 2025</a>
         <ul class="navbar-menu">
-            <li class="navbar-item {% if page == 'home' %}current{% endif %}">
-                <a href="{{ url_for('pages', page='home') }}" class="navbar-link">Home</a>
-            </li>
-            <li class="navbar-item {% if page == 'about' %}current{% endif %}">
-                <a href="{{ url_for('pages', page='about') }}" class="navbar-link">About</a>
-            </li>
-            <li class="navbar-item {% if page == 'authors' %}current{% endif %}">
-                <a href="{{ url_for('pages', page='authors') }}" class="navbar-link">Authors</a>
-            </li>
-            <li class="navbar-item {% if page == 'buy' %}current{% endif %}">
-                <a href="{{ url_for('pages', page='buy') }}" class="navbar-link">Buy</a>
-            </li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='home') }}" class="navbar-link">Home</a></li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='about') }}" class="navbar-link">About</a></li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='authors') }}"class="navbar-link">Authors</a></li>
+            <li class="navbar-item"><a href="{{ url_for('pages', page='buy') }}" class="navbar-link">Buy</a></li>
         </ul>
     </div>
 </nav>
@@ -23,10 +15,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        max-width: 12000px;
         margin: 0 auto;
         height: 5vh;
     }
+    
 
     .navbar-logo {
         color: #000;
@@ -62,7 +55,8 @@
 
     .navbar-logo:hover,
     .navbar-link:hover {
-        color: var(--lavender);
+        color: var(--lavendar)
+
     }
 
     #nav {
@@ -72,9 +66,8 @@
     }
 
     .navbar-item.current .navbar-link {
-        color: var(--lavender);
-        font-size: 22px;
-        font-weight: bold;
-        text-decoration: underline;
+        color: var(--lavendar); /* Change color for current page */
+        font-size: 22px; /* Increase font size for current page */
     }
+
 </style>
