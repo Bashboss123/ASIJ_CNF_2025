@@ -1,113 +1,139 @@
-{% extends "layout.html" %}
-
-{% block title %}About{% endblock %}
-{% block background %}{% endblock %}
-{% block lead %}{% endblock %}
-
-{% block page_content %}
-
-<div class="wrapper">
+{% extends "layout.html" %} {% block title %}About{% endblock %} {% block
+background %}{% endblock %} {% block lead %}{% endblock %} {% block page_content
+%}
+<div class="full-container">
+  <div class="wrapper">
     <h1 class="page-title">About</h1>
-
     <section class="about-section">
-        <div class="about-content">
-            <h2>About SUPA Creative Non-Fiction</h2>
-            <p>SUPA Creative Non-Fiction is dedicated to exploring the power of storytelling through real-life experiences. 
-               We combine literary artistry with factual accuracy to create compelling narratives that resonate with readers.</p>
-        </div>
-        <div class="about-image">
-            <img src="https://via.placeholder.com/400x250" alt="About SUPA Creative Non-Fiction">
-        </div>
+      <div class="about-image">
+        <img
+          src="static/about-SUPACNF.JPG"
+          alt="About SUPA Creative Non-Fiction"
+        />
+      </div>
+      <div class="about-content">
+        <h2>What is Creative Non-Fiction?</h2>
+        <p>
+          Creative Non-Fiction (CNF) is a genre that merges literary techniques
+          with factual storytelling. Rather than present reality as a series of
+          raw facts, CNF writers borrow techniques of fiction writing—
+          description, anecdote, scene construction, characterization, and
+          dialogue—to tell dynamic and compelling true stories. The crucial
+          distinction between creative nonfiction and fiction is that nonfiction
+          purports to tell the truth with very little embellishment, while
+          fiction claims to be “made up.” Creative nonfiction also draws from
+          poetic approaches to language, including imagery, metaphor, tone, and
+          shifts in point of view and perspective.
+          <a href="https://projectadvance.syracuse.edu/courses/wrt114/"
+            >(Syracuse University Project Advance)</a
+          >
+        </p>
+      </div>
     </section>
-
     <section class="about-section">
-        <div class="about-content">
-            <h2>What is Creative Non-Fiction?</h2>
-            <p>Creative Non-Fiction (CNF) is a genre that merges literary techniques with factual storytelling. 
-               It allows writers to present real events in an engaging and artistic way, making facts more compelling.</p>
-        </div>
+      <div class="about-content">
+        <h2>SUPA Creative Non-Fiction at ASIJ</h2>
+        <p>
+          Syracuse University Project Advance (SUPA) Creative Nonfiction is a
+          year-long English course at the American School in Japan that immerses
+          students in the art of storytelling through real-life experiences.
+          Students read and analyze a diverse range of creative nonfiction texts
+          while crafting their own essays, experimenting with voice, style,
+          form, and research to deepen their writing. In the Publication Unit,
+          each student contributes a piece to the collective anthology Komorebi,
+          showcasing their unique perspective and growth as writers.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="static/about-CNF.jpg" alt="About SUPA Creative Non-Fiction" />
+      </div>
     </section>
+  </div>
 </div>
 
 <style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
-        color: #333;
-        background: linear-gradient(0deg, hsla(46, 64%, 86%, 1) 20%, #d2f896 91%);
-    }
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    color: #333;
+  }
 
-    .wrapper {
-        padding: 50px 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 1000px;
-        margin: auto;
-    }
+  .wrapper {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+  }
 
+  .full-container {
+    background: linear-gradient(
+      0deg,
+      rgba(242, 231, 196, 0.676) 20%,
+      #d2f896 91%
+    );
+  }
 
-    .page-title {
-        font-size: 40px;
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: bold;
-    }
+  .page-title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
 
+  .about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #f6d72900;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
 
+  .about-content {
+    flex: 1;
+    padding: 10px 20px;
+  }
+
+  .about-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
     .about-section {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        background: #f6d72900;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
     }
-
-    .about-content {
-        flex: 1;
-        padding: 10px 20px;
-    }
-
-    .about-content h2 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    .about-content p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
 
     .about-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
+      margin-top: 20px;
     }
-
-    .about-image img {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-    }
-
-
-    @media (max-width: 768px) {
-        .about-section {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .about-image {
-            margin-top: 20px;
-        }
-    }
+  }
 </style>
 
 {% endblock %}
