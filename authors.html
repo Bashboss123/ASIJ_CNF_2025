@@ -4,9 +4,6 @@
     <!--favicon -->
     <link rel="shortcut icon" href="static/komorebi-cover.png" />
 
-    <!-- Custom CSS -->
-    <link href="../static/style.css" rel="stylesheet" />
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -954,13 +951,18 @@
               align-items: center;
             }
 
-            p .card-back {
-                font-size: 9px;
+            .card-back p {
+                font-size: clamp(8px, 1.8vw, 18px);
+                line-height: 1;
+                word-wrap: break-word;
+                overflow: scroll;
+                text-overflow: ellipsis;
+                max-height: 80%;
             }
 
             @media (max-width: 768px) {
               .hero-section {
-                height: 40vh; /* Adjust for mobile */
+                height: 40vh; 
               }
 
               .hero-section .page-title {
@@ -970,6 +972,18 @@
               .container {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
               }
+              .card-back {
+                padding: 5%;
+            }
+
+            .card-back h2 {
+                font-size: clamp(12px, 4vw, 18px);
+            }
+
+            .card-back p {
+                font-size: clamp(10px, 3.5vw, 16px);
+            }
+
             }
           </style>
         </div>
