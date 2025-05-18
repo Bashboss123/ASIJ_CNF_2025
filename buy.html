@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--favicon -->
     <link rel="shortcut icon" href="static/0.FINAL.GOLDCOVER.png" />
-
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
     <title>ASIJ CNF 2025 | ASIJ CNF Frazier 2025</title>
-
     <style>
       html,
       body {
@@ -17,12 +12,19 @@
         height: 100%;
         margin: 0;
         padding: 0;
-      }
-
-      body {
+        font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+      }
+
+      .full-container {
+        background: linear-gradient(
+          0deg,
+          rgba(242, 231, 196, 0.676) 20%,
+          #d2f896 91%
+        );
+        height: 100%;
       }
 
       #body {
@@ -34,216 +36,200 @@
       .container-flex {
         flex: 1;
       }
+
+      .wrapper {
+        max-width: 800px;
+        margin: 0 auto 60px auto;
+      }
+
+      .book-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .book-image img:hover {
+        transform: scale(1.02);
+      }
+
+      .book-image img {
+        transition: transform 0.4s ease-in-out;
+      }
+
+      .book-description h2 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .buy-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #27602f;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .buy-btn:hover {
+        background-color: #1e4b23;
+      }
+
+      .CENy8b {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+
+      nav#nav {
+        background: #d2f896;
+        padding: 10px 0;
+      }
+
+      .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 5vh;
+        padding: 0 20px;
+      }
+
+      .navbar-logo {
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+        transform: translateX(+15px);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .navbar-menu {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transform: translateX(-10%);
+      }
+
+      .navbar-item {
+        padding: 10px;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+      }
+
+      .navbar-link {
+        color: #000;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .navbar-logo:hover,
+      .navbar-link:hover {
+        color: #6a4dff;
+      }
+
+      .navbar-item.current .navbar-link {
+        color: #6a4dff;
+        font-size: 22px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #d2f896;
+        padding: 20px;
+        text-align: center;
+        font-size: 14px;
+      }
     </style>
   </head>
 
   <body>
     <!-- Navigation -->
     <nav id="nav">
-        <div class="navbar-container">
-          <a href="index.html" class="navbar-logo">ASIJ CNF 2025</a>
-          <ul class="navbar-menu">
-            <li class="navbar-item">
-              <a href="index.html" class="navbar-link">Home</a>
-            </li>
-            <li class="navbar-item">
-              <a href="about.html" class="navbar-link">About</a>
-            </li>
-            <li class="navbar-item">
-              <a href="authors.html" class="navbar-link">Authors</a>
-            </li>
-            <li class="navbar-item">
-              <a href="buy.html" class="navbar-link">Buy</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    
-    <style>
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 12000px;
-            margin: 0 auto;
-            height: 5vh;
-        }
-        
-    
-        .navbar-logo {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: opacity 0.3s ease;
-            transform: translateX(+15px);
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
-    
-        .navbar-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            margin: 0px;
-            padding: 0;
-            transform: translateX(-10%);
-        }
-    
-        .navbar-item {
-            padding: 10px;
-            font-size: 20px;
-            font-family: myFirstFont;
-            src: url(OPTICaslonFive);
-        }
-    
-        .navbar-link {
-            color: #000;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-    
-        .navbar-logo:hover,
-        .navbar-link:hover {
-            color: var(--lavendar)
-    
-        }
-    
-        #nav {
-            background: #d2f896;
-        }
-    
-        .navbar-item.current .navbar-link {
-            color: var(--lavendar); 
-            font-size: 22px; 
-        }
-    </style>
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo">ASIJ CNF 2025</a>
+        <ul class="navbar-menu">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link">About</a>
+          </li>
+          <li class="navbar-item">
+            <a href="authors.html" class="navbar-link">Authors</a>
+          </li>
+          <li class="navbar-item">
+            <a href="buy.html" class="navbar-link">Buy</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <div id="body">
-      <!-- Page Content -->
       <div class="container-flex">
-        <div class="row justify-content-center justify-content-md-start">
+        <div class="full-container">
           <div class="wrapper">
             <section class="book-section">
               <div class="book-image">
-                <img
-                  src="static/final_cover.png"
-                  class="CENy8b"
-                />
+                <a
+                  href="https://www.lulu.com/shop/mike-yamaguchi-and-caitlin-wright-and-ameri-wright-and-usho-watanabe/komorebi/paperback/product-dygz7zd.html"
+                  target="_blank"
+                >
+                  <img src="static/final_cover.png" class="CENy8b" />
+                </a>
               </div>
               <div class="book-description">
                 <h2>
-                  Purchase the 
-                  <span style="color: #27602f; font-weight: bold; font-size: 30px;"><i>komorebi</i></span>
-                  Anthology:
+                  Purchase the
+                  <span
+                    style="color: #27602f; font-weight: bold; font-size: 30px"
+                    ><i>komorebi</i></span
+                  >
+                  Anthology ONLINE:
                 </h2>
-
-                <p class="price">￥2,500</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDvs4OKgzpU9g5vCWUed1rm4IEeW04qf9wptu97UmL7bEesA/viewform?fbclid=PAZXh0bgNhZW0CMTEAAabUre4nuDTRcTt_GBOdw6AkyArxdgxScgXFaVXWkOy6num-h2XZr6825X8_aem_UAUPfWPOuVtOETvFYngRvw"><button class="buy-btn">Pre-order</button></a>
+                <p class="price">$27</p>
+                <a
+                  href="https://www.lulu.com/shop/mike-yamaguchi-and-caitlin-wright-and-ameri-wright-and-usho-watanabe/komorebi/paperback/product-dygz7zd.html"
+                  target="_blank"
+                >
+                  <button class="buy-btn">ORDER NOW</button>
+                </a>
               </div>
             </section>
           </div>
 
-          <style>
-            /* General Styles */
-            body,
-            html {
-              margin: 0;
-              padding: 0;
-              font-family: "Arial", sans-serif;
-              color: #333;
-              background: linear-gradient(
-                0deg,
-                hsla(46, 64%, 86%, 1) 20%,
-                #d2f896 91%
-              );
-            }
-
-            /* Wrapper */
-            .wrapper {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              padding: 50px 0;
-            }
-
-            /* Book Section */
-            .book-section {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 80%;
-              max-width: 900px;
-              background: #d3f8961c;
-              padding: 30px;
-              border-radius: 12px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            /* Book Image */
-            .book-image {
-              flex: 1;
-              display: flex;
-              justify-content: center;
-            }
-
-            .book-image img {
-              height: 250px;
-              max-width: 100%;
-              border-radius: 10px;
-              transition: transform 0.4s ease-in-out;
-            }
-
-            .book-image img:hover {
-              transform: scale(1.05);
-            }
-
-            /* Book Description */
-            .book-description {
-              flex: 1;
-              text-align: center;
-            }
-
-            .book-description h2 {
-              font-size: 22px;
-              margin-bottom: 10px;
-            }
-
-            .price {
-              font-size: 22px;
-              font-weight: bold;
-            }
-
-            .buy-btn {
-              background-color: #333;
-              color: white;
-              border: none;
-              padding: 10px 20px;
-              font-size: 16px;
-              border-radius: 5px;
-              cursor: pointer;
-              transition: background 0.3s ease;
-            }
-
-            .buy-btn:hover {
-              background-color: #555;
-            }
-
-            @media (max-width: 768px) {
-              .book-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-              }
-
-              .book-image {
-                margin-bottom: 20px;
-              }
-
-              .book-image img {
-                height: 200px;
-              }
-            }
-          </style>
+          <div class="wrapper">
+            <section class="book-section">
+              <div class="book-description">
+                <h2>
+                  Also available at
+                  <a
+                    href="https://store.tsite.jp/daikanyama/"
+                    target="_blank"
+                    style="
+                      color: #27602f;
+                      text-decoration: underline;
+                      font-weight: bold;
+                    "
+                  >
+                    Tsutaya Daikanyama
+                  </a>
+                  to purchase in-person!
+                </h2>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>
